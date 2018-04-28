@@ -6,9 +6,11 @@ app.set("view engine", "pug");
 app.set("views", "./view");
 
 app.get('/view', function(req, res){
-  res.render("Header", {
-    name: "TutorialsPoint",
-    url: "http://www.TutorialsPoint.com"
+  res.render('Content', {
+     user: {
+       name: "TutorialsPoint",
+       url:"http://www.tutorialspoint.com"
+     }
   });
 });
 
