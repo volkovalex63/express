@@ -2,6 +2,9 @@ var express = require("express");
 
 var app = express();
 
+app.use("/p", express.static("public"));
+app.use("/l", express.static("library"));
+
 app.set("view engine", "pug");
 app.set("views", "./view");
 
