@@ -57,32 +57,37 @@ app.post("/", function(req, res){
 });
 
 app.post("/public", function(req, res){
-  Person.remove({age: 33}, function(err, response){
-    console.log(response);
-  });
+  //Delete part
+  
+  // Person.remove({age: 33}, function(err, response){
+  //   console.log(response);
+  // });
+  //Update part
   // app.put('/public/:id', function(req, res){
   //   Person.findByIdAndUpdate(req.params.id, req.body, function(err, response){
   //     if(err) res.json({message: "Error in updating person with id " + req.params.id});
   //     res.json(response);
   //   })
   // });
-  // var Sname = req.body.name;
-  // if(!Sname){
-  //   res.render('search_result', {
-  //     message: "Please input search name!", type: "error"});
-  // }
-  // else{
-  //   Person.findByIdAndUpdate("5ae5db2ac6739a6f9cb57450", {age: 22}, function(err, response){
-      // res.json(response);
-      // console.log(response);
-      // if(err){
-      //   res.render('search_result', {message: "No data!", type: "error"});
-      // }
-      // else {
-      //   res.render('search_result', {message: "Find person data", type: "success", person: });
-      // }
-  //   });
-  // }
+
+  //Find part
+  var Sname = req.body.name;
+  if(!Sname){
+    res.render('search_result', {
+      message: "Please input search name!", type: "error"});
+  }
+  else{
+    Person.findByIdAndUpdate("5ae5db2ac6739a6f9cb57450", {age: 22}, function(err, response){
+      res.json(response);
+      console.log(response);
+      if(err){
+        res.render('search_result', {message: "No data!", type: "error"});
+      }
+      else {
+        res.render('search_result', {message: "Find person data", type: "success", person: });
+      }
+    });
+  }
 });
 
 app.listen(8080);
