@@ -58,7 +58,7 @@ app.post("/", function(req, res){
 
 app.post("/public", function(req, res){
   //Delete part
-  
+  //
   // Person.remove({age: 33}, function(err, response){
   //   console.log(response);
   // });
