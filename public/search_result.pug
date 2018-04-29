@@ -1,0 +1,10 @@
+html
+head
+  title Search_mongoDB
+  body
+    if(type == error)
+      h3(style="red") #{message}
+    else
+      h1 #{person.name}'s infomation
+      h4 age:#{person.age}
+      h4 nationality:#{person.nationality}
